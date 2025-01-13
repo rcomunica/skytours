@@ -1,0 +1,16 @@
+{
+  "name": "SkyTours",
+  "alias": "skytours",
+  "description": "",
+  "keywords": [],
+  "active": 1,
+  "order": 0,
+  "providers": [
+    "Modules\\SkyTours\\Providers\\AppServiceProvider",
+    "Modules\\SkyTours\\Providers\\EventServiceProvider",
+    "Modules\\SkyTours\\Providers\\RouteServiceProvider"
+  ],
+  "aliases": {},
+  "files": ["sk_helper.php"],
+  "requires": []
+}

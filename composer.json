@@ -1,0 +1,29 @@
+{
+  "name": "rcomunica/skytours",
+  "type": "phpvms-module",
+  "description": "",
+  "authors": [
+    {
+      "name": "Julian Ramirez",
+      "email": "julir2772@gmail.com"
+    }
+  ],
+  "require": {
+    "composer/installers": "~1.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Modules\\SkyTours\\Providers\\AppServiceProvider",
+        "Modules\\SkyTours\\Providers\\EventServiceProvider",
+        "Modules\\SkyTours\\Providers\\RouteServiceProvider"
+      ],
+      "aliases": {}
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Modules\\SkyTours\\": "."
+    }
+  }
+}
