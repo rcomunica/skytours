@@ -9,4 +9,8 @@ Route::get('/', 'IndexController@index');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/tours/{sktour:slug}/', 'ToursController@show')->name('tours.show');
+
+    // Updated and Save reports
+    Route::put('/tours/{sktour}/report/save')->name('report.update');
+    Route::post('/tours/{sktour}/report/store')->name('report.store');
 });

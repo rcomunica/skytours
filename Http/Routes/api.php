@@ -3,7 +3,7 @@
 /**
  * This is publicly accessible
  */
-Route::group(['middleware' => []], function() {
+Route::group(['middleware' => []], function () {
     Route::get('/', 'ApiController@index');
 });
 
@@ -12,6 +12,8 @@ Route::group(['middleware' => []], function() {
  */
 Route::group(['middleware' => [
     'api.auth'
-]], function() {
-    Route::get('/hello', 'ApiController@hello');
+]], function () {
+    // Route::get('/hello', 'ApiController@hello');
+    Route::get('tour/{sktour}/legs', 'ToursController@legs')->name('legs.show');
+    Route::get('pireps/search', 'PirepController@search')->name('pirep.search');
 });

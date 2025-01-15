@@ -22,7 +22,7 @@
             <a class="nav-link {{sk_tabActive('legs')}}" href="{{request()->url() . '?show=legs'}}">Legs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{sk_tabActive('rules')}}" href="{{request()->url() . '?show=rules'}}">Rules</a>
+            <a class="nav-link {{sk_tabActive('rules')}} disabled" href="{{request()->url() . '?show=rules'}}">Rules</a>
           </li>
           <li class="nav-item">
             <a class="nav-link {{sk_tabActive('report')}}" href="{{request()->url() . '?show=report'}}">Report</a>
@@ -44,12 +44,20 @@
     @case('legs')
     @include('skytours::tours.legs')
     @break
+    @case('report')
+    @include('skytours::tours.report')
+    @break
     @default
     @include('skytours::tours.description')
     @endswitch
     <div class="col-md-12 mt-5">
       <div class="text-end">
         <h5>Created by: <a href="#">Pepito P (XXX101)</a></h5>
+      </div>
+      <div class="text-start">
+        <span>
+          Power by <a href="https://github.com/rcomunica/skytours" target="_blank">SkyTours</a> (CoMMArka Studios)
+        </span>
       </div>
     </div>
   </div>

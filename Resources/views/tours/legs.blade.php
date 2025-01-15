@@ -1,5 +1,13 @@
+<style>
+  #map {
+    height: 50vh;
+    /* Ajusta la altura del mapa */
+    width: 100%;
+    /* Asegura que tome el ancho completo */
+  }
+</style>
 <div class="col-md 12">
-  <div class="border" id="map"></div>
+  <div class="w-100" id="map"></div>
 </div>
 <div class="col-md-12">
   <table class="table table-striped">
@@ -39,10 +47,10 @@
   </table>
 </div>
 
+@include('skytours::scripts.map')
 <script>
   function toggleDescription(id)
   {
     var element = document.getElementById(`leg-description-${id}`).classList.toggle('d-none')
   }
 </script>
-{{-- @include('skytours::scripts.map') --}}
