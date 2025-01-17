@@ -5,7 +5,6 @@ namespace Modules\SkyTours\Http\Controllers\Frontend;
 use App\Contracts\Controller;
 use Illuminate\Http\Request;
 use Modules\SkyTours\Models\SkTours;
-use Modules\SkyTours\Models\TrTours;
 
 /**
  * Class $CLASS$

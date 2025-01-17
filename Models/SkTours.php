@@ -3,6 +3,7 @@
 namespace Modules\SkyTours\Models;
 
 use App\Contracts\Model;
+use App\Models\User;
 
 /**
  * Class SkTours
@@ -46,5 +47,10 @@ class SkTours extends Model
     public function legs()
     {
         return $this->hasMany(SkLegs::class, 'tour_id', 'id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'created_by', 'id');
     }
 }

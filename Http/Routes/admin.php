@@ -20,3 +20,7 @@ Route::post('tours/{sktour}/legs', 'ToursController@legs');
 
 // Update legs
 Route::put('tours/{sktour}/legs', 'ToursController@legs');
+
+
+Route::post('tours/{skreport}/approve', 'ReportsController@approve')->name('report.approve');
+Route::post('tours/{skreport}/reject', 'ReportsController@reject')->name('report.reject');

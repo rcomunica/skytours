@@ -7,7 +7,7 @@ use Illuminate\Database\Schema\Blueprint;
 /**
  * Class CreateTrReportsTable
  */
-class CreateTrReportsTable extends Migration
+class CreateSkReportsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -22,7 +22,7 @@ class CreateTrReportsTable extends Migration
             $table->integer('user_id');
             $table->text('pirep_id');
             $table->integer('tour_id');
-            $table->enum('status', [0, 1, 2])->default(0);
+            $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
             $table->timestamps();
         });
     }

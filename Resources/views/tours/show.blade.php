@@ -47,12 +47,15 @@
     @case('report')
     @include('skytours::tours.report')
     @break
+    @case('myreport')
+    @include('skytours::tours.reports')
+    @break
     @default
     @include('skytours::tours.description')
     @endswitch
     <div class="col-md-12 mt-5">
       <div class="text-end">
-        <h5>Created by: <a href="#">Pepito P (XXX101)</a></h5>
+        <h5>Created by: <a href="#">{{$tour->user->name_private}} ({{$tour->user->pilot_id}})</a></h5>
       </div>
       <div class="text-start">
         <span>

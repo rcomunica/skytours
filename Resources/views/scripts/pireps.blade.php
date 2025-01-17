@@ -3,30 +3,31 @@
 
 <script>
   $(document).ready(function () {
-    $("select.airport_search").select2({
+    $("select.pirep_search").select2({
       ajax: {
-        url: '{{ Config::get("app.url") }}/api/pireps/',
+        url: '{{route('api.skytours.pirep.search')}}',
         data: function (params) {
-          const hubs_only = $(this).hasClass('hubs_only') ? 1 : 0;
           return {
-            search: params.term,
-            hubs: hubs_only,
-            page: params.page || 1,
-            orderBy: 'id',
-            sortedBy: 'asc'
+            arr: '{{$nxLeg->arrival_airport}}',
+            dpt: '{{$nxLeg->departure_airport}}',
           }
+        },
+        headers: {
+        'x-api-key': '{!! Auth::check() ? Auth::user()->api_key: '' !!}'
         },
         processResults: function (data, params) {
           if (!data.data) { return [] }
           const results = data.data.map(apt => {
             return {
               id: apt.id,
-              text: apt.description,
+              text: `Pirep ID: ${apt.id} | ${apt.dpt_airport} - ${apt.arr_airport_id} | ${apt.callsing}`,
             }
-          })
-  
+            console.log(data);
+            
+          });
+          
           const pagination = {
-            more: data.meta.next_page !== null,
+            more: null,
           }
   
           return {
@@ -43,6 +44,7 @@
       placeholder: 'Type to search',
     });
   });
+  
 </script>
 
 

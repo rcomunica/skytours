@@ -6,5 +6,5 @@
 
 return [
     'name' => 'SkyTours',
-    'version' => 'Pre-beta 1.0.0',
+    'version' => 'Pre-beta 1.0.0 DEV VERSION',
 ];

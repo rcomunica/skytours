@@ -20,9 +20,9 @@ class PirepResource extends Resource
     {
         return [
             'id' => $this->id,
-            'callsing' => $this->flight_number,
+            'callsing' => $this->ident,
             'dpt_airport' => $this->dpt_airport_id,
-            'arr_airport_id' => $this->dpt_airport_id,
+            'arr_airport_id' => $this->arr_airport_id,
         ];
     }
 }

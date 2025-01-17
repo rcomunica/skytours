@@ -12,5 +12,5 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Updated and Save reports
     Route::put('/tours/{sktour}/report/save')->name('report.update');
-    Route::post('/tours/{sktour}/report/store')->name('report.store');
+    Route::post('/tours/{sktour}/report/store', 'ToursController@store')->name('report.store');
 });

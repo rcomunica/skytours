@@ -1,11 +1,10 @@
 <style>
   #map {
-    height: 50vh;
-    /* Ajusta la altura del mapa */
+    height: 60vh;
     width: 100%;
-    /* Asegura que tome el ancho completo */
   }
 </style>
+
 <div class="col-md 12">
   <div class="w-100" id="map"></div>
 </div>

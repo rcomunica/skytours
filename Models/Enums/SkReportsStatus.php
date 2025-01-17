@@ -6,9 +6,9 @@ use App\Contracts\Enum;
 
 class SkReportsStatus extends Enum
 {
-    public const PENDING = 0;
-    public const APPROVED = 1;
-    public const REJECTED = 2;
+    public const PENDING = 'pending';
+    public const APPROVED = 'approved';
+    public const REJECTED = 'rejected';
 
     public static array $labels = [
         self::PENDING => 'Pending',

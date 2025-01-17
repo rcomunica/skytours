@@ -27,7 +27,9 @@
     </p>
     <p class="d-inline"><a href="https://github.com/martsime99" target="_blank">Idea from &copy; Martín S.
         (Martsime99)</a></p>
-
+    <p class="d-inline">
+      You version is: <b>{{config('skytours.version')}}</b>
+    </p>
   </div>
 </div>
 
@@ -102,22 +104,41 @@
     <table class="table table-striped text-left">
       <thead>
         <tr>
+          <th>Leg</th>
           <th>Pilot Name</th>
           <th>Tour Name</th>
-          <th>Leg</th>
+          <th>Pirep</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
+        @if (count($reports) == 0)
         <tr>
-          <td>John Doe</td>
-          <td>Test Tour</td>
-          <td>Leg 1</td>
-          <td>
-            <a href="#" class="btn btn-success">Accept</a>
-            <a href="#" class="btn btn-danger">Reject</a>
+          <td colspan="5">
+            <h4>No pending legs</h4>
           </td>
         </tr>
+        @endif
+        @foreach ($reports as $report)
+        <tr>
+          <td>Leg {{$report->leg->order}}</td>
+          <td>{{$report->user->name}}</td>
+          <td> <a href="{{route('admin.skytours.tours.show', $report->tour->id )}}"
+              target="_blank">{{$report->tour->name}}</a> </td>
+          <td> <a href="{{route('frontend.pireps.show', $report->pirep->id )}}"
+              target="_blank">{{$report->pirep->id}}</a>
+          </td>
+          <td>
+            {{Form::open(['route' => ['admin.skytours.report.approve', $report->id], 'method' => 'post'])}}
+            <button class="btn btn-success">Accept</button>
+            {{Form::close()}}
+
+            {{Form::open(['route' => ['admin.skytours.report.reject', $report->id], 'method' => 'post'])}}
+            <button class="btn btn-danger">Reject</button>
+            {{Form::close()}}
+          </td>
+        </tr>
+        @endforeach
     </table>
   </div>
 </div>

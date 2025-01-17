@@ -11,8 +11,6 @@ use Laracasts\Flash\Flash;
 use Modules\SkyTours\Models\Enums\SkTourStatus;
 use Modules\SkyTours\Models\SkLegs;
 use Modules\SkyTours\Models\SkTours;
-use Modules\SkyTours\Models\TrTours;
-use Modules\SkyTours\Models\TrLegs;
 
 /**
  * Class ToursController
@@ -82,6 +80,7 @@ class ToursController extends Controller
                 'end_date' => $request->end_date,
                 'image' => $request->image,
                 'status' => $request->status,
+                'created_by' => auth()->user()->id,
             ]
         );
 
@@ -157,6 +156,7 @@ class ToursController extends Controller
             'payment' => $request->payment,
             'start_date' => $request->start_date,
             'end_date' => $request->end_date,
+            'created_by' => auth()->user()->id,
         ]);
 
         if ($request->hasFile('image')) {

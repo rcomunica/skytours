@@ -3,6 +3,8 @@
 namespace Modules\SkyTours\Providers;
 
 use App\Contracts\Modules\ServiceProvider;
+use Modules\SkyTours\Models\Enums\SkReportsStatus;
+use Modules\SkyTours\Models\SkReports;
 
 /**
  * @package $NAMESPACE$
@@ -12,6 +14,10 @@ class AppServiceProvider extends ServiceProvider
     private $moduleSvc;
 
     protected $defer = false;
+
+
+    public $pendingLegs;
+
 
     /**
      * Boot the application events.
@@ -43,11 +49,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function registerLinks(): void
     {
+
         // Show this link if logged in
         $this->moduleSvc->addFrontendLink('SkyTours', '/skytours', 'fa fa-map-pin fa-w-16', $logged_in = false);
 
         // Admin links:
-        $this->moduleSvc->addAdminLink('SkyTours (Legs)', '/admin/skytours');
         $this->moduleSvc->addAdminLink('SkyTours', '/admin/skytours');
     }
 

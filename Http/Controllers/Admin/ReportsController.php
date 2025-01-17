@@ -6,12 +6,12 @@ use App\Contracts\Controller;
 use Illuminate\Http\Request;
 use Modules\SkyTours\Models\Enums\SkReportsStatus;
 use Modules\SkyTours\Models\SkReports;
-use Modules\SkyTours\Models\SkTours;
 
 /**
- * Admin controller
+ * Class ReportsController
+ * @package Modules\SkyTours\Http\Controllers\Http\Controllers\Admin
  */
-class AdminController extends Controller
+class ReportsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,12 +22,7 @@ class AdminController extends Controller
      */
     public function index(Request $request)
     {
-        $tours = SkTours::all();
-        $reports = SkReports::where('status', SkReportsStatus::PENDING)->get();
-        return view('skytours::admin.index', [
-            'tours' => $tours,
-            'reports' => $reports,
-        ]);
+        return view('skytours::index');
     }
 
     /**
@@ -39,27 +34,17 @@ class AdminController extends Controller
      */
     public function create(Request $request)
     {
-        return view('skytours::admin.create');
+        return view('skytours::create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     */
-    public function store(Request $request) {}
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param Request $request
      *
      * @return mixed
      */
-    public function edit(Request $request)
-    {
-        return view('skytours::admin.edit');
-    }
+    public function store(Request $request) {}
 
     /**
      * Show the specified resource.
@@ -70,7 +55,19 @@ class AdminController extends Controller
      */
     public function show(Request $request)
     {
-        return view('skytours::admin.show');
+        return view('skytours::show');
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param Request $request
+     *
+     * @return mixed
+     */
+    public function edit(Request $request)
+    {
+        return view('skytours::edit');
     }
 
     /**
@@ -86,4 +83,32 @@ class AdminController extends Controller
      * @param Request $request
      */
     public function destroy(Request $request) {}
+
+    /**
+     * Approve the specified resource.
+     * 
+     * @param SkReports $skreport
+     * @param Request $request
+     */
+
+    public function approve(SkReports $skreport, Request $request)
+    {
+        $skreport->status = SkReportsStatus::APPROVED;
+        $skreport->save();
+        return redirect()->route('admin.skytours.index');
+    }
+
+    /**
+     * Reject the specified resource.
+     * 
+     * @param SkReports $skreport
+     * @param Request $request
+     */
+
+    public function reject(SkReports $skreport, Request $request)
+    {
+        $skreport->status = SkReportsStatus::REJECTED;
+        $skreport->save();
+        return redirect()->route('admin.skytours.index');
+    }
 }

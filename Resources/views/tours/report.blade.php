@@ -3,11 +3,13 @@
     <table class="table table-striped rounded">
       <tbody class="text-start">
         {!! Form::open(['url' => route('skytours.report.store', $tour->id)]) !!}
-
+        {!! Form::hidden('leg_id', $nxLeg->id) !!}
         <tr>
           <td>LEG</td>
           <td>
-            <p>#00 {{$lastReport->pirep->dpt_airport->id}} - XXXX</p>
+            <p>#{{$nxLeg->order}} {{$nxLeg->departure_airport}} -
+              {{$nxLeg->arrival_airport}}
+            </p>
           </td>
         </tr>
         <tr>
@@ -17,16 +19,15 @@
           </td>
         </tr>
         <tr>
-          <td>Select pirep</td>
+          <td>{!! Form::label('pirep_id', 'Select pirep', []) !!}</td>
           <td>
-            {!! Form::select('input', ['Pirep ID: b68R5gwVzpVe | SKBO - SKMD | AVA3284'], null, ['class' =>
-            'form-control
-            select2'])
+            {!! Form::select('pirep_id', $pireps, null, ['class' =>
+            'form-control pirep_search'])
             !!}
           </td>
         </tr>
         <tr>
-          <td colspan="2">
+          <td colspan="2" class="text-end">
             <button type="submit" class="btn btn-success">Send report</button>
           </td>
         </tr>
@@ -35,3 +36,5 @@
     </table>
   </div>
 </div>
+
+@include('skytours::scripts.pireps')
