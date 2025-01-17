@@ -1,60 +1,60 @@
 # SkyTours Module
 
-¡Bienvenido al módulo **SkyTours** para PHPVMS! Este módulo está diseñado para mejorar la experiencia de los usuarios al ofrecer funcionalidades avanzadas para la gestión de tours virtuales.
+Welcome to the **SkyTours** module for PHPVMS! This module is designed to enhance user experiences by offering advanced features for managing virtual tours.
 
-## Características
+> [!WARNING]  
+> SkyTours is currently in a PRE-BETA version. Some functions are not fully operational and are under development.  
+> If you'd like to contribute to this project, your commits are welcome.  
+> Additionally, if you encounter any issues, feel free to open a ticket.
 
-- **Gestión de Tours**: Crea, edita y elimina tours fácilmente.
-- **Seguimiento de Progreso**: Monitorea el progreso de los usuarios en tiempo real.
-- **Reportes Detallados**: Genera reportes detallados sobre la participación y el rendimiento de los usuarios.
-- **Interfaz Amigable**: Una interfaz intuitiva y fácil de usar para una mejor experiencia de usuario.
+---
 
-## Instalación
+## ✨ Features
 
-Sigue estos pasos para instalar el módulo SkyTours:
+- **Tour Management**: Easily create, edit, and delete tours.  
+- **Progress Tracking**: Monitor user progress in real time.  
+- **Detailed Reports**: Generate comprehensive reports on user participation and performance.  
+- **User-Friendly Interface**: Intuitive and easy-to-use interface for a seamless experience.
 
-1. Clona el repositorio en tu directorio de módulos:
+---
+
+## 🚀 Installation
+
+Follow these steps to install the SkyTours module:
+
+1. Clone the repository into your modules directory:  
    ```bash
-   git clone https://github.com/rcomunica/SkyTours.git
+   git clone https://github.com/rcomunica/skytours.git
    ```
-2. Navega al directorio del módulo:
+2. Navigate to the module directory:
    ```bash
-   cd SkyTours
+   cd /{phpvmsdir}/modules/
    ```
-3. Ejecuta el script de instalación:
-   ```bash
-   php install.php
-   ```
+3. Complete the setup in your PHPVMS panel.
 
-## Uso
+---
 
-Para comenzar a usar el módulo SkyTours, sigue estos pasos:
+## 📖 Usage
+To start using the SkyTours module:
 
-1. Accede al panel de administración de PHPVMS.
-2. Navega a la sección de módulos y selecciona **SkyTours**.
-3. Configura tus tours y comienza a gestionar la participación de los usuarios.
+Log in to the PHPVMS admin panel.
+Navigate to the Modules section and select SkyTours.
+Configure your tours and manage user participation effortlessly.
 
-## Contribuciones
+---
 
-¡Las contribuciones son bienvenidas! Si deseas contribuir, por favor sigue estos pasos:
+## 🤝 Contributions
+We welcome your contributions! Whether it's fixing bugs, suggesting new features, or improving existing ones, every effort is appreciated.
 
-1. Haz un fork del repositorio.
-2. Crea una nueva rama para tu característica o corrección de errores:
-   ```bash
-   git checkout -b feature/nueva-caracteristica
-   ```
-3. Realiza tus cambios y haz commit:
-   ```bash
-   git commit -m "Añadir nueva característica"
-   ```
-4. Envía un pull request a la rama principal.
+---
 
-## Licencia
+## 🛡️ License
+This project is copyrighted and registered with the DNDA (National Copyright Directorate of the Ministry of the Interior of Colombia).
 
-Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+---
 
-## Contacto
+## 📬 Contact
+For any questions or assistance, feel free to reach out [via email](mailto:julir2772@gmail.com).
 
-Si tienes alguna pregunta o necesitas ayuda, no dudes en contactarnos a través de [correo electrónico](mailto:julir2772@gmail.com).
-
-¡Gracias por usar el módulo SkyTours!
+Thank you for choosing SkyTours! 🚀
+Let me know if you'd like further refinements!
